@@ -1,0 +1,17 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Dependencies (if you add any tools later, e.g. Live Server via npm)
+node_modules/
+
+# Build output (if any)
+dist/
+build/

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        header, footer, nav, section, article, aside {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+        figure {
+            text-align: center;
+        }
+        figcaption {
+            font-style: italic;
+            color: #555;
+        }
+        time {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Semantic Elements Example</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#section1">Section 1</a></li>
+                <li><a href="#section2">Section 2</a></li>
+                <li><a href="#section3">Section 3</a></li>
+            </ul>
+    </header>
+
+    <main>  
+
+        <article>
+            
+            <header>
+                <h2>Article Title</h2>
+                <p>Published on <time datetime="2024-06-01">June 1, 2024</time></p>
+            </header>
+
+            <figure>
+                <img src="https://unsplash.com/photos/green-grass-field-during-sunset-_RBcxo9AU-U" alt="Green Grass Field During Sunset" width="500" height="auto">
+                <figcaption>Beautiful green grass field during sunset.</figcaption>
+            </figure>
+
+            <p>This is the main content of the article. It provides information about the topic discussed in the article.</p>
+
+            <footer>
+                <p>Author: Hazem Ahmad</p>
+            </footer>
+
+            <aside>
+                <h3>Related Links</h3>
+                <ul>
+                    <li><a href="https://www.example.com">Example Link 1</a></li>
+                    <li><a href="https://www.example.com">Example Link 2</a></li>
+                </ul>
+            </aside>
+
+            <section id="section1">
+                <details>
+                    <summary>Click to expand Section 1</summary>
+                    <p>This is the content of Section 1. It can be expanded or collapsed.</p>
+                </details>
+            </section>
+
+        </article>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Hazem Ahmad. All rights reserved.</p>
+    </footer>
+</body>
+</html>

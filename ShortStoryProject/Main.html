@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator with Iframe</title>
+</head>
+<body style="background-color: antiquewhite; display: flex; margin: 0; height: 100vh;">
+        <div id = "Sidebar" style="width: 20%; border-right: 1px solid #ccc; margin-left: 10px;">
+
+            <h2>Short Stories:</h2>
+            <br>
+            <a href="story1.html" target="ContentIframe">The Grateful Traveller</a>
+            <br>
+            <a href="story2.html" target="ContentIframe">The Wise Owl And The Rabbit</a>
+            <br>
+            <a href="story3.html" target="ContentIframe">The Brave Little Squirrel</a>
+            
+        </div>
+
+        <div id = "Content" style=" width: 70%; margin-left: 20px; border: none;">
+
+            <h2 align="center" style="color:red">Short Story Section</h2>
+
+            <iframe name="contentFrame" src="story1.html" style="width: 100%; height: 100%; border: none;"></iframe>
+        
+        </div>
+    </div>
+</body>
+</html>

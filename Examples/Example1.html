@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the HTML document -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sets the viewport to control layout on mobile browsers -->
+    
+    <meta name="description" content="Learn the essentials of HTML5"> <!-- Provides a brief description of the page, which can be used by search engines -->
+    
+    <meta name="keywords" content="HTML5, Web Development, Learn HTML"> <!-- Supplies search engines with keywords for SEO -->
+    
+    <meta name="author" content="John Doe"> <!-- Defines the author of the document -->
+    
+    <title>Understanding the HTML `<head>` Element</title> <!-- The title of the document shown in the browser's title bar or tab -->
+    
+    <link rel="stylesheet" href="styles.css"> <!-- Link to an external CSS file -->
+    
+    <script src="script.js"></script> <!-- Link to an external JavaScript file -->
+
+
+    <!-- Favicons -->
+
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Specifies a favicon for the webpage -->
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"> <!-- Specifies an icon for Apple devices -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> <!-- Specifies a 32x32 PNG favicon for android devices-->
+
+    <link rel="icon" type="image/png" type="image/svg+xml">   <!-- vg favicon for bigger usecases-->
+    
+
+    <!-- Document Metadata -->
+
+
+    <meta charset="utf-8"> <!-- Specifies the character encoding for the HTML document -->
+    
+    <meta name="language" content="English"> <!-- Specifies the primary language of the document's content -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sets the viewport to control layout on mobile browsers -->
+
+    <meta name="description" content="An overview of HTML metadata elements and their uses."> <!-- Provides a concise summary of the page content -->
+   
+    <meta name="keywords" content="HTML, metadata, SEO, web development"> <!-- Lists relevant keywords for the document -->
+    
+    <meta name="author" content="Jane Doe"> <!-- Credits the author of the content -->
+
+    <meta name="revised" content="Saturday, September 7th, 2025, 5:15 pm"> <!-- Shows the last modification date -->
+
+    <meta name="copyright" content="Copyright 2022 Jane Doe"> <!-- Declares copyright ownership -->
+
+    <meta name="robots" content="noindex, nofollow"> <!-- Directs search engines on how to index and link to the page -->
+
+    <meta name="generator" content="WordPress 5.9"> <!-- Identifies the tool used to generate the page -->
+
+    <meta name="revisit-after" content="7 days"> <!-- Suggests how often search engines should revisit the page -->
+
+    <meta name="rating" content="general"> <!-- Rates the content for age appropriateness [General, Mature, 14 years old, Safe for Kids, Adult ..etc]-->
+    
+    <meta name="application-name" content="HTML Metadata Guide"> <!-- Names the web application -->
+
+    <meta name="theme-color" content="#5a67d8"> <!-- Suggests a color that the browser might use to customize the display -->
+
+
+    <!-- HTTP-Equiv Meta Tags -->
+
+
+    <meta charset="UTF-8"> <!-- Standard character encoding declaration -->
+
+    <!-- 
+    Purpose of HTTP-Equiv Tags:
+        These tags provide a way for HTML documents to send HTTP headers that would typically be set on the server. This capability is useful for pages served from environments where the developer might not have full control over server headers.
+    Common Uses of HTTP-Equiv Tags:
+        -Controlling caching behavior.
+        -Redirecting users.
+        -Specifying character sets.
+        -Setting security policies.
+        -others. 
+    -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--backward compatibility not for html 5, Specifies the MIME type and character encoding of the HTML document -->
+
+     <!-- <meta http-equiv="refresh" content="5">  -->
+    <!-- Refreshing the Current Page every 5 seconds -->
+
+    <!-- <meta http-equiv="refresh" content="10; url=http://www.ProgrammingAdvices.com/"> -->
+    <!-- Redirects to a URL after a 10-second delay, used for redirect pages or notifications -->
+
+    <meta http-equiv="cache-control" content="no-cache">
+    <!-- Instructs browsers on how to cache page content, ideal for non-caching -->
+    <!-- How It Works :
+    Browser Behavior with no-cache: Upon encountering this meta tag, 
+        the browser understands that it should not serve the page from cache without checking with the server first. 
+        If the content on the server has changed since the last cache, the server will send the new content. 
+        If not, the server may send a 304 (Not Modified) HTTP status, indicating that the cached version can be served.
+    Use Case: This approach is particularly useful for dynamic content or during development stages 
+              where changes are frequent, and ensuring the user sees the most recent version of a webpage is crucial. -->
+
+
+    <meta http-equiv="Pragma" content="no-cache">
+    <!-- Ensures compatibility with HTTP/1.0 caches, similar function to "Cache-Control" -->
+
+    <meta http-equiv="expires" content="Wed, 21 Oct 2025 07:28:00 GMT">
+    <!-- Sets an expiration date for the document -->
+    <!-- Purpose and Function
+        Expires: This directive serves as an instruction to web browsers and other caching systems about the 
+        exact time after which the content should be considered stale. This is analogous to the Expires HTTP header.
+        GMT Time Format: The value of the content attribute must be a date in Greenwich Mean Time (GMT), also known as UTC (Coordinated Universal Time), in the specific format shown.
+
+        How It Works:
+        Effect on Caching: When a browser loads a webpage, it notes the expiry date set by this meta tag. If a user visits the same page before the expiry date, the browser might load the page from the cache rather than requesting it again from the server. Once the date has passed, the cached version of the page is considered expired, and the browser is expected to fetch a new copy of the page from the server the next time it is accessed.
+
+        Use Case: This is particularly useful for managing content that changes periodically where it is beneficial to control when users should receive updated content without manually clearing caches. -->
+
+
+    <meta http-equiv="Set-Cookie" content="name=value; expires=date; path=/;">
+    <!-- Allows setting HTTP cookies from HTML documents -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Forces Internet Explorer to use the latest rendering engine -->
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';">
+    <!-- Restricts resources to be loaded from the same origin, enhancing security -->
+    <!-- A Content Security Policy (CSP) is a security standard introduced to 
+        help prevent cross-site scripting (XSS), clickjacking, and other code injection 
+        attacks resulting from execution of malicious content in the trusted web page context.
+
+    Impact on Security: By setting default-src 'self';, you are instructing the browser to ignore any resources that try to load from locations other than the origin of the current document. This significantly reduces the risk of successful attacks -->
+    
+    <!-- SEO & Crawler Directives -->
+    
+    <meta name="robots" content="index, follow"> 
+    <!-- 
+    Purpose: This tag provides general instructions to all web crawlers about indexing and linking.
+    
+    index: Allows search engine bots to index the page, meaning the page can appear in search results.
+    follow: Instructs bots to follow the links on the page, potentially indexing linked pages as well. -->
+
+    <meta name="noarchive" content="noarchive"> 
+    <!-- Purpose: Prevents search engines from storing a cached copy of the page.
+    
+    noarchive: Search engines like Google typically cache versions of web pages. This directive stops them from doing so, which might be necessary for content that is sensitive or changes frequently. -->
+
+
+    <meta name="noindex" content="noindex"> 
+    <!-- 
+    Purpose: Stops search engines from including the page in their index.
+    
+    noindex: Useful for pages that should not appear in search results, such as internal pages, confidential information, or duplicate content. -->
+
+
+    <meta name="nofollow" content="nofollow"> 
+    <!-- 
+    Purpose: Prevents search engines from following any links on the page.
+    
+    nofollow: Useful for pages where you do not want to pass link equity to the pages you link to, or when the links on the page are user-generated and potentially untrustworthy. -->
+
+
+
+    <meta name="revisit-after" content="7 days"> 
+    <!-- 
+    Purpose: Advises search engines on how often they should revisit the page for potential re-indexing.
+    
+    revisit-after: This is more of an advisory tag and may not be strictly adhered to by crawlers, but it can be used to suggest a review frequency. -->
+
+
+    <meta name="nosnippet" content="nosnippet"> 
+    <!-- 
+    Purpose: Prevents the display of snippets in search results.
+    
+    nosnippet: Can be used to control privacy or just to keep the search listings clean. This ensures that no text or video previews are shown in the search results. -->
+
+
+    <meta name="noimageindex" content="noimageindex">
+    <!-- 
+    Purpose: Ensures that images on the page are not indexed.
+    
+    noimageindex: Important for pages where you may have copyrighted or sensitive images that you do not want appearing in image search results. -->
+
+
+    <meta name="googlebot" content="index, follow, max-snippet:-1"> 
+    <!-- 
+    Purpose: Provides specific instructions only to Google's crawler.
+    
+    max-snippet:-1: This particular directive tells Google not to limit the size of the snippet. It could be used for giving Google specific indexing or snippet handling instructions differing from other bots. -->
+
+
+    <meta name="bingbot" content="index, follow, noarchive"> <!-- Specific directives for Bing's crawler -->
+    <!-- 
+    Purpose: Specific directives tailored for Bing's crawler.
+    Combines general indexing and following behavior with a noarchive directive specifically for Bing, potentially differing in handling from Google or other search engines. -->
+
+    
+    <!-- Social Media Meta Tags -->
+
+    <meta property="og:title" content="Understanding Social Media Meta Tags">
+    <!-- 
+    Purpose: Specifies the title of the content that will appear in the social media post.
+    
+    Effect: When someone shares the URL, "Understanding Social Media Meta Tags" will appear as the main title in the share preview. -->
+
+
+    <meta property="og:type" content="article">
+    <!--
+     Purpose: Indicates the type of content that is being shared.
+    
+     Effect: "article" is used here, suggesting that the content is a news article or a blog post. This influences how social networks handle and display the URL. -->
+
+    <meta property="og:url" content="https://www.example.com/article">
+    <!-- 
+    Purpose: Points to the canonical URL of the page or article.
+   
+    Effect: Ensures that all shares for this content contribute to the same URL, rather than spreading across multiple URLs. -->
+
+
+    <meta property="og:image" content="https://www.example.com/thumbnail.jpg">
+    <!-- 
+    Purpose: Specifies the URL of an image that accompanies the article.
+    
+    Effect: This image will be displayed as a thumbnail in the social media post. It's crucial for attracting attention and providing visual context to the post. -->
+
+    <meta property="og:description" content="A detailed guide on using social media meta tags to enhance content visibility.">
+    <!-- 
+    Purpose: Provides a brief description of the content.
+    
+    Effect: This description will appear in the social media post beneath the title, offering more details about the content of the page. -->
+
+    <!-- 
+    Twitter Card Tags:
+    These tags are specific to Twitter and dictate how content is formatted when shared on Twitter: -->
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- 
+    Purpose: Specifies the type of Twitter Card used.
+
+    Effect: The "summary_large_image" card type is used to include a large, prominent image along with a tweet. This is ideal for engaging users and drawing more attention to the post. -->
+
+    <meta name="twitter:creator" content="@exampleuser">
+    <!-- 
+    Purpose: Indicates the Twitter username of the content creator.
+  
+    Effect: Helps in attributing the content to the creator, potentially leading to more followers or interactions directly with the creator. 
+    -->
+
+    
+    <meta name="twitter:image:alt" content="An overview of social media optimization techniques">
+    <!-- 
+    Purpose: Provides alternative text for the Twitter image.
+    
+    Effect: Ensures that if the image cannot be displayed, there is descriptive text that explains what the image is about, enhancing accessibility and SEO. -->
+
+
+    <style>
+        code, samp{
+            font-family: monospace;
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        kbd {
+            font-family: monospace;
+            background-color: #e0e0e0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+    <style>
+        circle:hover {
+            fill: blue;
+        }
+    </style>
+    <style>
+        /* Basic styling for the meter element */
+        meter {
+            width: 100%;
+            height: 20px; /* Set the height of the meter */
+        }
+        </style>
+</head>
+<body>
+
+    <!-- Heading -->
+
+    <h1 id="heading1">Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <br>
+
+    <!-- Go to Copyright Section -->
+    <a href="#copyright" title="">go to copyright</a>
+
+    <!-- Division -->
+    <div>
+    <p>This is a paragraph of <strong>text</strong>. <br> It provides information about the <u>content</u> of the <b>page</b>.</p>
+    </div>
+
+    <!-- Stylistic and Semantic Elements -->
+    <div>
+    <p><small>This is copyright text.</small></p>
+    <p><mark>This is marked text.</mark></p>
+    <p>H<sub>2</sub>O</p>
+    <p>1<sup>st</sup></p>
+    <p><del>This is deleted text.</del></p>
+    <p><ins>This is inserted text.</ins></p>
+    </div>
+
+    <!-- Horizontal Line -->
+    <hr>
+    
+    <!-- Preformatted Text -->
+    <pre>
+       <em>This</em> is preformatted <span style="color: blue;">text</span>.
+                    It preserves whitespace and line <i>breaks</i>.
+    </pre>
+
+    <!-- Image -->
+
+    <img src="HazemAhmadProfilePicEnhanced.jpg" alt="HazemAhmadProfilePicEnhanced" >
+    <br>
+    <img src="HazemAhmadProfilePicEnhanced.jpg" alt="HazemAhmadProfilePicEnhanced" width="500" height="333">
+    <br>
+    <img src="HazemAhmadProfilePicEnhanced.jpg" alt="HazemAhmadProfilePicEnhanced" title="Hazem Ahmad Profile Picture" width="25%" height="auto">
+    <br>
+    <img src="https://unsplash.com/photos/green-grass-field-during-sunset-_RBcxo9AU-U" width="25%" height="auto">
+    <br>
+    <img src="https://unsplash.com/photos/green-grass-field-during-sunset-_RBcxo9AU-U" loading="lazy" width="25%" height="auto">
+    <br>
+    <img src="https://unsplash.com/photos/green-grass-field-during-sunset-_RBcxo9AU-U" loading="auto" width="25%" height="auto">
+    <br>
+    <img src="https://unsplash.com/photos/green-grass-field-during-sunset-_RBcxo9AU-U" loading="eager" width="25%" height="auto">
+    <br>
+    <img src="HazemAhmadProfilePicEnhanced.jpg"
+        srcset="HazemAhmadProfilePicEnhanced.jpg 500w, HazemAhmadProfilePicEnhanced.jpg 1000w, HazemAhmadProfilePicEnhanced.jpg 1500w"
+        sizes=" (max-width: 600px) 488px"            , (max-width: 900px) 800px              , 1500px"
+        alt = "Responsive image example">
+    <br>
+
+    <!-- Iframe -->
+
+    <iframe src="homework1.html" title="iframe example"></iframe>
+    <iframe src="homework1.html" title="iframe example" style="border: 2px solid red;"></iframe>
+    <br>
+    <iframe src="homework1.html" title="iframe example" style="border: none; width: 25%; height: auto;"></iframe>
+    <br>
+    <iframe src="homework1.html" title="iframe example" style="border: none; width: 25%; height: auto;"></iframe>
+    <br>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/UQGNNZYJqD4?si=wYYDmBBYpd_Z5GE2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <br>
+    <iframe src="homework1.html" loading="lazy" title="Lazy-loaded frame"></iframe>
+    <br>
+    <iframe id="Koko" srcdoc="<p>Hello</p>"  title="Inline HTML frame"></iframe>
+    <br>
+
+    <!-- Hyperlinks -->
+
+    <a href="https://programmingadvices.com" title="Programming Advices">Programming Advices</a>
+    <br>
+    <a href="https://programmingadvices.com" target="_blank" title="Programming Advices">Programming Advices</a>
+    <br>
+    <a href="https://programmingadvices.com" target="_blank" title="Programming Advices">
+            <img src="HazemAhmadProfilePicEnhanced.jpg" width="25%" height="auto">
+    </a>
+    <br>
+    <a href="Folder/Example2.html" target="_blank" title="Programming Advices">Programming Advices</a>
+    <br>
+
+    <!-- 
+            cc: carbon copy, use to send email to your friend and
+            a copy to your manager.
+
+            bcc: blind carbon copy, use to send email to additional 
+            recipients without revealing their email addresses to 
+            other recipients.
+    -->
+    <!-- this will open your default email app -->
+
+    <a href="mailto:example@example.com?cc=recipient@example.com&bcc=thirdparty@example.com&subject=Hello&body=This is a test email." target="_blank" title="Programming Advices">Email</a>
+    <br>
+    <a href="tel:+1234567890" title="">Call</a>
+    <br>
+    <a href="certificate-of-completion-for-solid-principles.pdf" title="">Download Certificate</a>
+    <br>
+    <a href="homework1.rar" title="">Download Homework</a>
+    <br>
+    <a href="#heading1" title="">Go to Heading 1</a>
+    <p id="copyright"><small>This is copyright text.</small></p>
+    <br>
+    <iframe src="Example2.html" style="width: 100%; height: 300px;"></iframe>
+    <br>
+
+    <!-- Button as Link -->
+
+    <p>
+        <button onclick="location.href='https://programmingadvices.com'">Click Me</button>
+    </p>
+
+    <p>
+        <button onclick="window.open('https://programmingadvices.com', '_blank')">Click Me</button>
+    </p>
+
+    <p>
+        <button onclick="window.open('https://programmingadvices.com', 'Programming Advices', 'width=800,height=600')">Click Me</button>
+    </p>
+
+    <!-- HTML Link Colors -->
+
+    <p>Vsit our
+        <a href="https://programmingadvices.com" 
+           style="color: red;"
+           onmouseOver= "this.style.color = 'blue'"
+           onmouseOut= "this.style.color = 'red'"
+           onmousedown= "this.style.color = 'yellow'"
+           onmouseup= "this.style.color = 'red'" >
+           website
+        </a>
+         to learn more about programming.
+    </p>
+
+    <!--   ping Attribute s -->
+    
+    <a href="https://programmingadvices.com" 
+       ping="https://www.analyticsprovider.com/track?event=linkClick, https://www.othertracker.com/logger
+       target="_blank">Visit our website</a>
+    <br>
+
+    <!-- rel Attribute  -->
+
+    <a href="https://programmingadvices.com" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer external nofollow">Programming Advices</a>
+
+    <!-- HTML Entities  -->
+
+    <p> &copy; &amp; &lt; &gt; &ldquo; &rdquo; &lt;b&gt;</p>
+    <p> (<); (>) (&nbsp;&nbsp;&nbsp;) (->) (<-) (😷);</p>
+
+    <!--   Unordered HTML Lists < ul > -->
+    <ul>
+        <li>
+            Item 1
+            <ul>
+                <li>Sub-item 1</li>
+                <li>Sub-item 2</li>
+            </ul>
+        </li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <!--   Ordered HTML Lists < ol > -->
+    <ol type="A">
+        <li>
+            Item 1
+            <ol>
+                <li>Sub-item 1</li>
+                <li>Sub-item 2</li>
+            </ol>
+        </li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+    <ol style="list-style-type:upper-roman;">
+        <li>
+            Item 1
+            <ul>
+                <li>
+                    <a href="https://programmingadvices.com" target="_blank" title="Programming Advices">Sub-item 1</a>
+                </li>
+                <li>Sub-item 2</li>
+            </ul>
+        </li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+    <ol style="list-style-type:lower-roman;">
+        <li>Respond to urgent emails.</li>
+        <li>Prepare project presentation.</li>
+        <li>Schedule team meeting.</li>
+    </ol>
+
+    <!--     Description Lists < dl > -->
+
+    <dl>
+        <dt>HTML</dt> <!-- Definition Term -->
+        <dd>Hypertext Markup Language</dd> <!-- Definition Description -->
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+        <dt>JavaScript</dt>
+        <dd>A programming language for web development</dd>
+    </dl>
+
+    <!-- Basic Tables -->
+
+    <table width="25%" border="1px" cellpadding="5" cellspacing="5">
+        <caption>Table Caption</caption>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+        <tr>
+            <td>Cell 1</td>
+            <td>Cell 2</td>
+            <td>Cell 3</td>
+        </tr>
+        <tr>
+            <td>Cell 1</td>
+            <td>Cell 2</td>
+            <td>Cell 3</td>
+        </tr>
+    </table>
+
+    <!-- Table with Rowspan and Colspan -->
+
+    <table width="25%" border="1px" cellpadding="5" cellspacing="5">
+        <caption>Table Caption</caption>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+        <tr>
+            <td>Cell 1</td>
+            <td rowspan="2" colspan="2">Cell 2</td>
+        </tr>
+        <tr>
+            <td>Cell 1</td>
+        </tr>
+        <tr>
+            <td colspan="2"><b>Total</b></td>
+            <td>Cell 2</td>
+        </tr>
+    </table>
+
+    <!-- Blockquotes, Quotes, and Citations -->
+
+    <article>
+    <blockquote cite="https://www.example.com/article">
+        <p>"This is a blockquote. It is used to indicate a section that is quoted from another <cite>source</cite>."</p>
+        <footer>— Author Name, <cite><a href="https://www.example.com/article" target="_blank">Source Title</a></cite></footer>
+    </blockquote>
+        <br>
+    <p>This is a quote: <q>This is an inline quote.</q></p>
+    </article>
+    
+    <!-- Specialized Text-Level Semantic Elements -->
+
+    <p>
+        <dfn title="HyperText Markup Language">HTML</dfn> stands for HyperText Markup Language.
+        <br>
+        <abbr title="Cascading Style Sheets">CSS</abbr> is used for styling web pages.
+        <br>
+        <var>x</var> is a variable in programming.
+        <br>
+        <code>console.log("Hello, World!");</code> is a JavaScript statement that prints a message to the console.
+        <br>
+        This is sample output from a program: <samp>Hello World!</samp>
+        <br>
+        The keyboard shortcut for copying is <kbd>Ctrl + C</kbd>.
+        <br>
+    </p>
+
+    <!-- < video > -->
+
+    <video align="center" muted autoplay poster="/miscellanous/Thumb.jpg" controls width="500" height="auto" loop>
+        <source src="/miscellanous/Funny.mp4" type="video/mp4">
+        <source src="video.webm" type="video/webm">
+        <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+        <track src="subtitles_en.vtt" kind="subtitles" srclang="fr" label="French">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- < audio > -->
+
+    <audio align="center" muted autoplay controls>
+        <source src="/miscellanous/sample.mp3" type="audio/mpeg">
+        <source src="/miscellanous/Sound.ogg" type="audio/ogg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!-- Form Creation-->
+
+    <form action="/Info" method="post">
+     
+        <fieldset>
+            <legend>Personal Information</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday" required>
+                <br>
+                <label for="Age">Age:</label>
+                <input type="number" id="Age" name="Age" min="0" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferences</legend>
+                <p>Subscription Type:</p>
+                <label for="Basic">Basic:</label>
+                <input type="radio" id="Basic" name="subscription" value="basic" required>
+                <br>
+                <label for="Premium">Premium:</label>
+                <input type="radio" id="Premium" name="subscription" value="premium" required>
+                <br>
+
+                <p>Newsletter</p>
+                <label for="Subscribe">Subscribe to newsletter:</label>
+                <input type="checkbox" id="Subscribe" name="Subscribe" checked>
+                <br>
+                <label for="Country">Country:</label>
+                <select name="Country" id="Country">            
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="UK">United Kingdom</option>
+                </select>
+            </fieldset>
+        
+            <fieldset>
+            <legend>Your Message</legend>
+                <label for="Message">Message</label>
+                <textarea id="Message" name="Message" rows="4" cols="50" placeholder="Enter your message here..." ></textarea>
+                <br>
+                <button type="submit">Submit</button>
+            </fieldset>            
+    </form>
+    <!-- Method Attribute -->
+
+    <form action="/search" method="get">
+        <label for="query">Search:</label>
+        <input type="text" id="query" name="query">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Using POST method -->
+    <form action="/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- Validation Techniques -->
+
+    <form action="/login" method="post">
+        <label for="Age">Age:</label>
+        <input type="number" id="Age" name="Age" min="0" max="50" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"minlength="8" required>
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website" pattern="https?://.+" title="Please enter a valid URL starting with http:// or https://">
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- enctype Attribute -->
+
+    <form action="/submit" method="post" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Submit</button>
+    </form>
+
+    <form action="/submit" method="post" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Submit</button>
+
+    </form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Upload a file:</label>
+        <input type="file" id="file" name="file">
+        <button type="submit">Upload</button>
+    </form>
+
+    </form action="/debug" method="post" enctype="text/plain">
+        <label for="info">Information:</label>
+        <input type="text" id="info" name="info">
+        <button type="submit">Send</button>
+    </form>
+
+    <!-- Dynamic Graphics -->
+
+    <br>
+    <br>
+    <br>
+
+    <canvas id="myCanvas" width="400" height="200" style="border:1px solid #000000;">
+        Your browser does not support the HTML canvas tag.
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(20, 20, 150, 100);
+    </script>
+
+    <br>
+    <br>
+    <br>
+
+    <canvas id="myCanvas2" width="200" height="200" style="border:1px solid #000000;">
+    </canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas2');
+        var ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.arc(100, 100, 50, 0, 2 * Math.PI); // Circle centered at (100,100) with radius 50
+        ctx.stroke();
+    </script>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- SVG Graphics -->
+
+    <svg width="400" height="110">
+        <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+    </svg>
+
+    <br>
+    <br>
+    <br>
+
+    <svg width="500" height="500">
+        <path d="M50,150 L150,150 L60,50 L100,170 L10,90 L190,90 L100,170 L140,50 L2,170 Z"
+              fill="orange" stroke="black" stroke-width="2"/>
+    </svg>
+
+    <br>
+    <br>
+    <br>
+
+    <svg width="200" height="200">
+        <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:rgb(255,255,0); stop-opacity:1" />
+                <stop offset="100%" style="stop-color:rgb(255,0,0); stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="100" rx="85" ry="55" fill="url(#grad1)" />
+    </svg>
+
+    <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" fill="red" />
+    </svg>
+    
+    <br>
+
+    <img src="data:image/png;base64,iVB......">
+
+
+    <br>
+    <!-- Image Map-->
+
+    <img src="/miscellanous/HazemAhmadProfilePicEnhanced.jpg" alt="workmap" usemap="#workmap" width="500" height="500">
+
+    <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" alt="Computer" href="https://programmingadvices.com/computer">
+        <area shape="circle" coords="337,300,44" alt="Phone" href="https://programmingadvices.com/phone">
+        <area shape="poly" coords="290,172,333,250,300,300,250,250" alt="Tablet" href="https://programmingadvices.com/tablet">
+    </map>
+
+    <!-- < picture > Element -->
+
+    <br>
+    <picture>
+        <source media="(min-width: 650px)" srcset="/ShortStoryProject/images/p1.jpg"> <!-- large image -->
+        <source media="(min-width: 465px)" srcset="/ShortStoryProject/images/p2.jpg"> <!-- medium image -->
+        <img src="/miscellanous/HazemAhmadProfilePicEnhanced.jpg" alt="Hazem Ahmad"> <!-- default image -->
+    </picture>
+
+    <!-- < embed > Element -->
+
+    <embed src="/miscellanous/certificate-of-completion-for-solid-principles.pdf" type="application/pdf" width="600" height="400"></embed>
+
+    <embed src="/miscellanous/sample.mp3" type="audio/mpeg" width="300" height="320"></embed>
+
+    <embed src="/miscellanous/Thumb.jpg" type="image/jpeg" width="640" height="360"></embed>
+
+    <!-- < object > Element -->
+
+    <br>
+    <br>
+    <br>
+
+
+    <object data="/miscellanous/certificate-of-completion-for-solid-principls.pdf" type="application/pdf" width="600" height="400">
+        <p>Your browser does not support PDFs. <a href="/miscellanous/certificate-of-completion-for-solid-principles.pdf">Download the PDF</a>.</p>
+    </object>
+
+    <object data="/miscellanous/sample.mp3" type="audio/mpeg" width="300" height="320">
+        <p>Your browser does not support audio files. <a href="/miscellanous/sample.mp3">Download the audio</a>.</p>
+    </object>
+    
+
+    <!-- < meter > Tag -->
+
+    <br>
+    <br>
+    <br>
+
+    <meter value="0.6" min="0" max="1" low="0.4" high="0.8">60%</meter>
+
+    <!-- < link rel="preload" > -->
+
+    <link rel="preload" href="style.css" as="style" type="text/css" crossorigin="anonymous">
+    <link rel="preload" href="script.js" as="script" type="text/javascript" crossorigin="anonymous">
+</body>
+</html>
