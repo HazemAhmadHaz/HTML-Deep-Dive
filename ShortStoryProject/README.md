@@ -28,6 +28,13 @@ The sidebar contains anchor (`<a>`) tags with a `target` attribute pointing to t
 <iframe name="contentFrame" src="story1.html"></iframe>
 ```
 
+## 📷 Preview
+<p align="center">
+  <img src="ProjectImages/1.png" width="30%" alt="Home View">
+  <img src="ProjectImages/2.png" width="30%" alt="Story View">
+  <img src="ProjectImages/3.png" width="30%" alt="Sidebar Navigation">
+</p>
+
 ## 🛠️ Technologies Used
 
 - HTML5
@@ -38,6 +45,12 @@ The sidebar contains anchor (`<a>`) tags with a `target` attribute pointing to t
 1. Clone or download the repository
 2. Open `index.html` in any web browser
 3. Click on any story title in the sidebar to view it
+
+### 👨‍💻 Author
+Hazem Ahmad
+- GitHub: https://github.com/HazemAhmadHaz
+- LinkedIn: https://www.linkedin.com/in/hazem-ahmad-haz
+- Email: HazemAhmad01234@gmail.com
 
 ## 📄 License
 
